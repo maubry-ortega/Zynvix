@@ -1,0 +1,5 @@
+-cp src
+-js bin/test.js
+-main zynvix.orm.TestORM
+-lib hxnodejs
+--macro include("zynvix.orm.models.User")
