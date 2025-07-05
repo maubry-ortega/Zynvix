@@ -2,6 +2,6 @@
 package zynvix.orm;
 
 interface ZynConnector {
-  function zynConnect(config:Dynamic):Void;
-  function zynQuery(sql:String, params:Array<Dynamic>, cb:Array<Dynamic>->Void):Void;
+  public function zynConnect(config:Dynamic):Void;
+  public function zynQuery(sql:String, params:Array<Dynamic>, cb:Array<Dynamic>->Void):Void;
 }

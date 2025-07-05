@@ -1,0 +1,4 @@
+-cp src
+-python build/main.py
+-main zynvix.orm.TestORM
+

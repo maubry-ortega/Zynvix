@@ -1,10 +1,9 @@
 package zynvix.orm;
 
 import zynvix.orm.models.User;
-import zynvix.orm.ZynModel;
-import zynvix.orm.ZynMigration;
 import zynvix.orm.ZynQuery;
 import zynvix.orm.ZynvixORM;
+import zynvix.orm.ZynModel;
 
 class TestORM {
   static function main() {
@@ -26,28 +25,17 @@ class TestORM {
       port: 5432
     });
 
-    ZynMigration.zynRun();
-
-    var userData = {
-      name: "alice",
-      email: "alice@example.com",
+    var user = {
+      name: "python_dev",
+      email: "python@example.com",
       password: "1234"
     };
 
-    ZynQuery.zynCreate(User, userData, function(user) {
-      if (user == null) {
+    ZynQuery.zynCreate(User, user, function(u) {
+      if (u == null)
         trace("❌ Zyn: No se pudo crear el usuario");
-        return;
-      }
-
-      trace("✅ Zyn: Created user: " + user.name);
-
-      ZynQuery.zynFind(User, user.id, function(found) {
-        if (found != null)
-          trace("🔍 Zyn: Found: " + found.name);
-        else
-          trace("❌ Zyn: Not found");
-      });
+      else
+        trace("✅ Zyn: Usuario creado: " + u.name);
     });
   }
 }
