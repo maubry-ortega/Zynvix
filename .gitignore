@@ -7,6 +7,10 @@
 # Node modules (if using npm)
 node_modules/
 
+# Python virtual environments
+.venv/
+.env
+
 # Haxe intermediate files
 *.n
 *.ndll
@@ -35,3 +39,4 @@ Thumbs.db
 # Misc
 *.old
 *.orig
+
